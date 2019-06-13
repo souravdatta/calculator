@@ -13,6 +13,13 @@ CALCAccumulatorTests >> initialize [
 ]
 
 { #category : #tests }
+CALCAccumulatorTests >> testAccGo [
+	acc addText: '2 + 2'.
+	acc compute.
+	self assert: acc result equals: 0
+]
+
+{ #category : #tests }
 CALCAccumulatorTests >> testAddBlankFunction [
 	acc addFunction: 'jump'.
 	self assert: acc text equals: 'jump()'
@@ -43,6 +50,11 @@ CALCAccumulatorTests >> testClear [
 	acc addText: 'gibberish 2332'.
 	acc clear.
 	self assert: acc text equals: ''
+]
+
+{ #category : #tests }
+CALCAccumulatorTests >> testInitResult [
+	self assert: acc result equals: 0
 ]
 
 { #category : #tests }

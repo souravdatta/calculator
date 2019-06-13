@@ -2,9 +2,10 @@ Class {
 	#name : #CALCAccumulator,
 	#superclass : #Object,
 	#instVars : [
-		'text'
+		'text',
+		'result'
 	],
-	#category : 'Calculator'
+	#category : #Calculator
 }
 
 { #category : #setter }
@@ -19,7 +20,13 @@ CALCAccumulator >> addText: aString [
 
 { #category : #setter }
 CALCAccumulator >> clear [
-	text := ''
+	text := ''.
+	result := 0
+]
+
+{ #category : #calculation }
+CALCAccumulator >> compute [
+	^ result
 ]
 
 { #category : #initialization }
@@ -37,6 +44,11 @@ CALCAccumulator >> removeLast [
 	text := text size > 1
 		ifTrue: [ text copyFrom: 1 to: text size - 1 ]
 		ifFalse: [ '' ]
+]
+
+{ #category : #accessing }
+CALCAccumulator >> result [
+	^ result
 ]
 
 { #category : #accessing }
