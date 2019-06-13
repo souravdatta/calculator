@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'acc'
 	],
-	#category : 'Calculator-Tests'
+	#category : #Calculator
 }
 
 { #category : #initialization }

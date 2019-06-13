@@ -6,7 +6,7 @@ Class {
 		'symbtn1',
 		'symbtn2'
 	],
-	#category : #'Calculator-Tests'
+	#category : #Calculator
 }
 
 { #category : #initialization }
