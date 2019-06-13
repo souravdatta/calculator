@@ -7,23 +7,25 @@ Class {
 	#category : 'Calculator-Tests'
 }
 
+{ #category : #initialization }
+CALCAccumulatorTests >> initialize [
+	acc := CALCAccumulator new.
+]
+
 { #category : #tests }
 CALCAccumulatorTests >> testAddBlankFunction [
-	acc := CALCAccumulator new.
 	acc addFunction: 'jump'.
 	self assert: acc text equals: 'jump()'
 ]
 
 { #category : #tests }
 CALCAccumulatorTests >> testAddFirstText [
-	acc := CALCAccumulator new.
 	acc addText: 'a'.
 	self assert: acc text equals: 'a'
 ]
 
 { #category : #tests }
 CALCAccumulatorTests >> testAddFunction [
-	acc := CALCAccumulator new.
 	acc addText: '2 + x'.
 	acc addFunction: 'sin'.
 	self assert: acc text equals: 'sin(2 + x)'
@@ -31,7 +33,6 @@ CALCAccumulatorTests >> testAddFunction [
 
 { #category : #tests }
 CALCAccumulatorTests >> testAddMoreText [
-	acc := CALCAccumulator new.
 	acc addText: '2'.
 	acc addText: '3'.
 	self assert: acc text equals: '23'
@@ -39,7 +40,6 @@ CALCAccumulatorTests >> testAddMoreText [
 
 { #category : #tests }
 CALCAccumulatorTests >> testClear [
-	acc := CALCAccumulator new.
 	acc addText: 'gibberish 2332'.
 	acc clear.
 	self assert: acc text equals: ''
@@ -47,13 +47,11 @@ CALCAccumulatorTests >> testClear [
 
 { #category : #tests }
 CALCAccumulatorTests >> testInitVal [
-	acc := CALCAccumulator new.
 	self assert: acc text equals: '' 
 ]
 
 { #category : #tests }
 CALCAccumulatorTests >> testLargeSequence [
-	acc := CALCAccumulator new.
 	acc addText: '234';
 		addText: '+';
 		addText: '345';
@@ -66,7 +64,6 @@ CALCAccumulatorTests >> testLargeSequence [
 
 { #category : #tests }
 CALCAccumulatorTests >> testNewline [
-	acc := CALCAccumulator new.
 	acc addText: 'abc'.
 	acc newLine.
 	Transcript show: 'Testing |'; show: acc text; show: '|'; cr.
@@ -75,7 +72,6 @@ CALCAccumulatorTests >> testNewline [
 
 { #category : #tests }
 CALCAccumulatorTests >> testRemoveAll [
-	acc := CALCAccumulator new.
 	acc addText: 'AB'.
 	acc removeLast.
 	acc removeLast.
@@ -84,7 +80,6 @@ CALCAccumulatorTests >> testRemoveAll [
 
 { #category : #tests }
 CALCAccumulatorTests >> testRemoveText [
-	acc := CALCAccumulator new.
 	acc addText: 'A'.
 	acc addText: 'B'.
 	acc removeLast.
@@ -93,7 +88,6 @@ CALCAccumulatorTests >> testRemoveText [
 
 { #category : #tests }
 CALCAccumulatorTests >> testRemoveVery [
-	acc := CALCAccumulator new.
 	acc addText: '12'.
 	acc removeLast.
 	acc removeLast.
