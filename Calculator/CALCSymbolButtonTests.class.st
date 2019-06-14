@@ -12,8 +12,8 @@ Class {
 { #category : #initialization }
 CALCSymbolButtonTests >> initialize [
 	acc := CALCAccumulator new.
-	symbtn1 := CALCSymbolButton newWith: acc name: 'A'. 
-	symbtn2 := CALCSymbolButton newWith: acc name: 'B'
+	symbtn1 := CALCSymbolAction newWith: acc name: 'A'. 
+	symbtn2 := CALCSymbolAction newWith: acc name: 'B'
 ]
 
 { #category : #tests }

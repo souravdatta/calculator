@@ -1,10 +1,10 @@
 Class {
-	#name : #CALCFunctionButton,
-	#superclass : #CALCBaseButton,
+	#name : #CALCFunctionAction,
+	#superclass : #CALCBaseAction,
 	#category : #Calculator
 }
 
 { #category : #accessing }
-CALCFunctionButton >> action [
+CALCFunctionAction >> action [
 	self accumulator addFunction: self name
 ]

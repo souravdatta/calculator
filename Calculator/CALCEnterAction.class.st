@@ -1,10 +1,10 @@
 Class {
-	#name : #CALCEnterButton,
-	#superclass : #CALCBaseButton,
+	#name : #CALCEnterAction,
+	#superclass : #CALCBaseAction,
 	#category : #Calculator
 }
 
 { #category : #accessing }
-CALCEnterButton >> action [
+CALCEnterAction >> action [
 	self accumulator newLine
 ]

@@ -1,15 +1,15 @@
 Class {
-	#name : #CALCBaseButton,
+	#name : #CALCBaseAction,
 	#superclass : #Object,
 	#instVars : [
 		'name',
 		'acc'
 	],
-	#category : 'Calculator'
+	#category : #Calculator
 }
 
 { #category : #'instance creation' }
-CALCBaseButton class >> newWith: anAcc name: aName [
+CALCBaseAction class >> newWith: anAcc name: aName [
 	| o |
 	
 	o := self new.
@@ -20,32 +20,32 @@ CALCBaseButton class >> newWith: anAcc name: aName [
 ]
 
 { #category : #accessing }
-CALCBaseButton >> accumulator [
+CALCBaseAction >> accumulator [
 	^ acc
 ]
 
 { #category : #accessing }
-CALCBaseButton >> accumulator: anAcc [
+CALCBaseAction >> accumulator: anAcc [
 	acc := anAcc
 ]
 
 { #category : #accessing }
-CALCBaseButton >> action [
+CALCBaseAction >> action [
 	self subclassResponsibility 
 ]
 
 { #category : #accessing }
-CALCBaseButton >> name [
+CALCBaseAction >> name [
 	^ name
 ]
 
 { #category : #accessing }
-CALCBaseButton >> name: aName [
+CALCBaseAction >> name: aName [
 	name := aName
 
 ]
 
 { #category : #accessing }
-CALCBaseButton >> press [
+CALCBaseAction >> press [
 	self action
 ]

@@ -1,10 +1,10 @@
 Class {
-	#name : #CALCClearButton,
-	#superclass : #CALCBaseButton,
+	#name : #CALCClearAction,
+	#superclass : #CALCBaseAction,
 	#category : #Calculator
 }
 
 { #category : #accessing }
-CALCClearButton >> action [
+CALCClearAction >> action [
 	self accumulator clear
 ]

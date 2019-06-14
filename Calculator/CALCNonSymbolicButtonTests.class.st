@@ -14,11 +14,11 @@ CALCNonSymbolicButtonTests >> initialize [
 ]
 
 { #category : #tests }
-CALCNonSymbolicButtonTests >> testClearButton [
+CALCNonSymbolicButtonTests >> testClearAction [
 	| curText |
 	
 	curText := acc text.
-	btn := CALCClearButton newWith: acc name: 'CE'.
+	btn := CALCClearAction newWith: acc name: 'CE'.
 	acc addText: 'AA'.
 	btn press.
 	btn press.
@@ -26,20 +26,20 @@ CALCNonSymbolicButtonTests >> testClearButton [
 ]
 
 { #category : #tests }
-CALCNonSymbolicButtonTests >> testFunctionButton [
+CALCNonSymbolicButtonTests >> testFunctionAction [
 	acc clear.
 	acc addText: 'x'.
-	btn := CALCFunctionButton newWith: acc name: 'SIN'.
+	btn := CALCFunctionAction newWith: acc name: 'SIN'.
 	btn press.
 	self assert: acc text equals: 'SIN(x)' 
 ]
 
 { #category : #tests }
-CALCNonSymbolicButtonTests >> testNewLineButton [
+CALCNonSymbolicButtonTests >> testNewLineAction [
 	| curText |
 	
 	curText := acc text.
-	btn := CALCEnterButton newWith: acc name: 'Enter'.
+	btn := CALCEnterAction newWith: acc name: 'Enter'.
 	btn press.
 	btn press.
 	self assert: acc text equals: (curText , (String with: Character cr) , (String with: Character cr))  
